@@ -22,7 +22,6 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local get_ped = GetPlayerPed(-1) -- current ped
 		local get_ped_veh = GetVehiclePedIsIn(GetPlayerPed(-1),false) -- Current Vehicle ped is in
-		local pos = GetEntityCoords(GetPlayerPed(-1))
 
 		if(IsPedInAnyVehicle(GetPlayerPed(-1), false))then
 			local kmh = GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1), false)) * 3.6
@@ -31,6 +30,5 @@ Citizen.CreateThread(function()
 			drawTxt(0.659, 1.42, 1.0,1.0,0.64 , "~w~" .. math.ceil(kmh), 255, 255, 255, 255)  -- INT: kmh
 			drawTxt(0.679, 1.432, 1.0,1.0,0.4, "~w~ km/h", 255, 255, 255, 255)	-- TXT: kmh
 		end		
-		drawTxt(0.51, 0.5155, 1.0,1.0,0.55, "~w~" .. pos,255,255,255,255)
 	end
 end)
